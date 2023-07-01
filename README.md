@@ -169,4 +169,21 @@ export default function Square() {
 
 とにかく次にいきたい。
 
-## 
+### とりあえずcss
+
+さきほど、\<Layout / \> コンポーネントを作ったので css を当ててみます。
+
+Layoutコンポーネントが存在することを確かめるためです。分かりやすくborderで囲ってみました。
+
+```
+.layout {
+  height: 400px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: aquamarine;
+  padding: 10px;
+}
+```
+これは、src/styles.cssに追記しました。
+
+##
