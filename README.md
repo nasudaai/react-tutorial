@@ -74,9 +74,11 @@ export default function Square() {
 もう少し詳しく言おうとすると、*2つの要素を内包した一つの要素*ということになるでしょうか。
 
 いずれにせよ、私とあなたは一つだし、JSXは正しく記述されerrorも出なくなりました。
+
+と思ったら...、
 ### jsxフラグメントで囲うとerrorになる
 
-なんでかしらないが、
+なんでか知らないが、
 
 ```
 <>...</>
@@ -96,9 +98,44 @@ import { Fragment } from 'react';
 
 で囲うことにする。
 
+
+```
+export default function Square() {
+  return 
+    <Fragment>
+      <button className="square">X<button/>
+      <button className="square">X<button/>;
+    <Fragment/>
+}
+```
+
 もしくは、\<div\> タグやその他の要素で囲んでもよい。
 
+
+```
+export default function Square() {
+  return 
+    <div>
+      <button className="square">X<button/>
+      <button className="square">X<button/>;
+    <div/>
+}
+```
+
 `<Layout />` みたいなコンポーネントを自作して、それで囲んでも良い。
+
+
+```
+export default function Square() {
+  return 
+    <Layout>
+      <button className="square">X<button/>
+      <button className="square">X<button/>;
+    <Layout/>
+}
+```
+
+とか。
 
 ### Layoutを自作する
 
@@ -122,7 +159,7 @@ export default function Square() {
 }
 ```
 
-<Layout /> コンポーネントには、*styleName*　を設定したので、あとでcssを当ててみるかも。
+\<Layout \> コンポーネントには、*styleName*　を設定したので、あとでcssを当ててみるかも。
 
 とにかく次にいきたい。
 
