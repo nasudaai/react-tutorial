@@ -61,11 +61,12 @@ export default function Square() {
 
 ```
 export default function Square() {
-  return 
+  return (
     <>
       <button className="square">X<button/>
       <button className="square">X<button/>;
     </>
+  );
 }
 ```
 追加した \<\> 空のタグをJSXフラグメントというらしいです。
@@ -103,11 +104,12 @@ import { Fragment } from 'react';
 
 ```
 export default function Square() {
-  return 
+  return (
     <Fragment>
       <button className="square">X<button/>
       <button className="square">X<button/>;
     <Fragment/>
+  );
 }
 ```
 
@@ -116,11 +118,12 @@ export default function Square() {
 
 ```
 export default function Square() {
-  return 
+  return (
     <div>
       <button className="square">X<button/>
       <button className="square">X<button/>;
     <div/>
+  );
 }
 ```
 
@@ -129,11 +132,12 @@ export default function Square() {
 
 ```
 export default function Square() {
-  return 
+  return (
     <Layout>
       <button className="square">X<button/>
       <button className="square">X<button/>;
     <Layout/>
+  );
 }
 ```
 
@@ -146,7 +150,7 @@ export default function Square() {
 
 ```
 const Layout = ({ children }) => {
-  return <div className="layout">{children}</div>
+  return <div className="layout">{children}</div>;
 } 
 ```
 それから、
